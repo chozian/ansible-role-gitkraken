@@ -7,7 +7,7 @@
 
 - name: ensure ca-certificates installed
   become: true
-  apt:
+  yum:
     name: ca-certificates
     state: present
 
@@ -55,11 +55,13 @@
 
 - name: install GitKraken dependencies
   become: true
-  apt:
-    name: gvfs-bin
+  yum:
+    name: gvfs
     state: present
 
 - name: install GitKraken
   become: true
-  apt:
-    deb: '{{ gitkraken_download_dir }}/{{ gitkraken_redis_filename }}'
+  yum:
+    name: '{{ gitkraken_download_dir }}/{{ gitkraken_redis_filename }}'
+    state: present
+    disable_gpg_check: yes

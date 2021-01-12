@@ -1,6 +1,6 @@
 ---
 # Filename of GitKraken redistributable package
-gitkraken_redis_filename: gitkraken-amd64.deb
+gitkraken_redis_filename: gitkraken-amd64.rpm
 
 # Path to GitKraken etag file
 gitkraken_etag_path: '{{ gitkraken_download_dir }}/{{ gitkraken_redis_filename }}.etag'
